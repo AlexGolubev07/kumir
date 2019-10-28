@@ -1,0 +1,91 @@
+﻿алг
+нач
+кон
+
+алг лог isPrime(цел number)
+нач
+цел i
+если number = 1
+то
+знач := нет
+иначе 
+если number = 2 
+то
+знач := да
+иначе
+знач := да
+нц для i от 2 до number - 1
+если mod(number, i) = 0
+то
+знач := нет
+выход
+всё
+кц
+все
+всё
+кон
+
+
+алг цел amountPrime(цел number)
+нач
+цел count
+count := 0
+цел i
+нц для i от 2 до number
+если isPrime(i)
+то
+count := count + 1
+всё
+кц
+знач := count;
+кон
+
+алг arrayOfPrime(цел number, цел size, аргрез цел таб a[1:size])
+нач
+цел position
+position := 1
+цел i
+нц для i от 2 до number
+если isPrime(i)
+то
+a[position] := i
+position := position + 1
+всё
+кц
+кон
+
+алг @тестирование
+нач
+|тестирование isPrime
+утв isPrime(1) = нет
+утв isPrime(2) = да
+утв isPrime(3) = да
+утв isPrime(17) = да
+утв isPrime(18) = нет
+
+|тестирование amountPrime
+утв amountPrime(1) = 0
+утв amountPrime(2) = 1
+утв amountPrime(3) = 2
+утв amountPrime(5) = 3
+утв amountPrime(6) = 3
+утв amountPrime(7) = 4
+
+|тестирование arrayOfPrime
+цел size1
+size1 := amountPrime(7)
+целтаб a1[1:size1]
+arrayOfPrime(7, size1, a1)
+цел i
+нц для i от 1 до size1
+утв isPrime(a1[i])
+кц
+
+цел size2
+size2 := amountPrime(18)
+целтаб a2[1:size2]
+arrayOfPrime(18, size2, a2)
+нц для i от 1 до size2
+утв isPrime(a2[i])
+кц
+кон
