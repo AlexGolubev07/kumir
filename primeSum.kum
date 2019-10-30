@@ -1,5 +1,8 @@
-﻿алг
+﻿использовать Строки
+
+алг
 нач
+вывод primeSum(2 + 3 + 5 + 7 + 11, 5)
 кон
 
 алг лог isPrime(цел number)
@@ -54,6 +57,42 @@ position := position + 1
 кц
 кон
 
+алг лит primeSum(цел number, цел amount)
+нач
+цел size
+size := amountPrime(number);
+целтаб a[1:size]
+arrayOfPrime(number, size, a);
+
+цел n
+цел sum
+цел i
+знач := ""
+лог flag
+flag := да 
+нц для n от 1 до size - amount + 1
+sum := 0
+
+нц для i от n до n + amount - 1
+sum := sum + a[i];
+кц
+
+если sum = number
+то
+знач := цел_в_лит(a[n])
+нц для i от n + 1 до n + amount - 1
+знач := знач + " + " + цел_в_лит(a[i])
+кц
+знач := знач + " = " + цел_в_лит(sum)
+flag := нет
+всё
+кц
+
+если flag то
+знач := "NO SOLUTION"
+всё
+кон
+
 алг @тестирование
 нач
 |тестирование isPrime
@@ -88,4 +127,11 @@ arrayOfPrime(18, size2, a2)
 нц для i от 1 до size2
 утв isPrime(a2[i])
 кц
+
+|тестирование primeSum
+утв primeSum(2 + 3 + 5, 3) = '2 + 3 + 5 = 10'
+утв primeSum(2 + 3 + 5 + 7, 4) = '2 + 3 + 5 + 7 = 17'
+утв primeSum(2 + 3 + 5 + 7 + 11, 5) = '2 + 3 + 5 + 7 + 11 = 28'
+утв primeSum(2011, 3) = '661 + 673 + 677 = 2011'
 кон
+
