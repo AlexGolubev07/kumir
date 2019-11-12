@@ -1,0 +1,32 @@
+﻿алг Фрекен Бок (вещ xa, ya, xb, yb, xd, yd)
+нач
+вещ na, ma, nb, mb, nd, md
+na := xa
+ma := ya
+nb := xb
+mb := yb
+nd := xd
+md := yd
+nb := nb - xa
+mb := mb - ya
+nd := nd - xa
+md := md - ya
+вещ co, si, gip, x, y
+x := nb ** 2
+y := mb ** 2
+gip := sqrt(x + y)
+co := nb / gip
+si := mb / gip
+кон
+
+алг поворот1 (вещ co, si, nb, mb)
+нач
+
+
+кон
+
+алг поворот2 (вещ co, si, nd, md)
+нач
+
+
+кон
