@@ -1,0 +1,52 @@
+﻿алг Фрекен Бок 
+нач
+вещ xa, ya, xb, yb, xd, yd
+ввод xa, ya, xb, yb, xd, yd
+xb := xb - xa
+yb := yb - ya
+xd := xd - xa
+yd := yd - ya
+xa := 0 
+ya := 0
+вещ co, si, gip, x, y, xb1, yb1, xd1, yd1
+x := xb ** 2
+y := yb ** 2
+gip := sqrt(x + y)
+co := xb / gip
+si := yb / gip
+xb1 := xb
+yb1 := yb
+yd1 := yd
+xd1 := xd
+xb := xb1 * co + yb1 * si
+yb := - xb1 * si + yb1 * co
+xd := xd1 * co + yd1 * si
+yd := - xd1 * si + yd1 * co
+если xb > 0 то
+если yd < 0 то
+вывод "RIGHT"
+все
+если yd > 0 то
+вывод "LEFT"
+все
+если yd = 0 то
+вывод "BOTH"
+все
+иначе
+если yd > 0 то
+вывод "RIGHT"
+все
+если yd < 0 то
+вывод "LEFT"
+все
+если yd = 0 то
+вывод "BOTH"
+все
+все
+кон
+
+
+
+
+
+
